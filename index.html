@@ -9,13 +9,39 @@
     <main>
       <h1>DCC202 - Atividade 9: Joao Augusto Pilado de Castro</h1>
       <p>
-        Esta é a página principal tem código JavaScript nela. você só verá o
+        Esta é a página principal tem código JavaScript nela. Você só verá o
         resultado no console e durante a depuração.
       </p>
     </main>
     <script>
-      let joao = 1;
-      let maria = 2;
+      let oJoao = {
+        tipo: "Maçã",
+        qtd: 1,
+        comeu: function () {
+          oJoao.qtd--;
+        },
+      };
+      let oMaria = {
+        tipo: "Maçã",
+        qtd: 2,
+        comeu: function () {
+          oMaria.qtd--;
+        },
+      };
+      deJoaoParaMaria();
+      deMariaParaJoao();
+
+      oJoao.comeu();
+
+      function deJoaoParaMaria() {
+        oMaria.qtd += oJoao.qtd;
+        oJoao.qtd = 0;
+      }
+
+      function deMariaParaJoao() {
+        oJoao.qtd += oMaria.qtd;
+        oMaria.qtd = 0;
+      }
     </script>
   </body>
 </html>
